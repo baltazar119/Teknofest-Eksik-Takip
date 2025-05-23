@@ -1,0 +1,18 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite" // BURASI ÖNEMLİ!
+  url      = env("DATABASE_URL")
+}
+
+model Gonullu {
+  id         Int      @id @default(autoincrement())
+  tarih      DateTime
+  saatBasla  String
+  saatBitis  String
+  alan       String
+  catering   Boolean
+  dosyaYolu  String
+}
